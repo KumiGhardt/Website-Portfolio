@@ -1,0 +1,378 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4efeb;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 2;
+    padding: 7%;
+}
+
+/*Header*/
+
+header {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 3%;
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
+}
+
+.logo {
+    padding: 50px 20px;
+    max-width: 100%;
+
+}
+
+li {
+    display: inline-block;
+    padding: 40px;
+    width: 100px;
+    -webkit-box-flex: end;
+    -ms-flex: end;
+    flex: end;
+}
+
+
+/* middle section */
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-variant: small-caps;
+    line-height: 1;
+}
+
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.profile__portrait {
+    float: left;
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.profile-intro {
+    padding: 30px;
+}
+
+.download {
+    margin-top: 30px;
+}
+
+span {
+    color: #590059;
+    -webkit-animation: blink 1.5s linear infinite;
+    animation: blink 1.5s linear infinite;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* table - work */
+
+thead {
+    text-align: left;
+}
+
+
+.button {
+    /* overwrites browser defaults */
+    /* resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* style button */
+    background-color: #590059;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.2s opacity;
+    -o-transition: 0.2s opacity;
+    transition: 0.2s opacity;
+}
+
+.button:visited {
+    color: white;
+}
+
+.button:hover,
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d()*/
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+    /*https://www.w3schools.com/css/css3_transitions.asp*/
+    -webkit-transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+    -o-transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+    transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+    opacity: 70%;
+}
+
+
+/*contact form */
+
+input[type=text],
+select,
+textarea {
+    width: 85%;
+    height: 10px;
+    padding: 40px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #590059;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* footer */
+
+.page-footer {
+    clear: both;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-link {
+    margin: 70px;
+}
+
+/* GRID IN WORK.HTML */
+.grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+/* Grid fallback */
+.grid__item {
+    display: inline-block;
+    padding: 10px;
+}
+
+/* Grid for newer browsers */
+@supports (display: grid) {
+    .grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 50px 1fr 50px 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+        margin: 0;
+    }
+
+    .grid__item {
+        background-color: #f9f9f9;
+        border-radius: 3%;
+        width: auto;
+        min-height: auto;
+        margin: 0;
+    }
+}
+
+/* animations */
+@-webkit-keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: #590059;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: #590059;
+    }
+}
+
+.sun {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-name: color-change;
+    animation-name: color-change;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+
+
+/*OR ANOTHER WAY TO APPLY ANIMATION IS 
+
+.sun {
+    animation: 4s color-change infinite alternate linear;
+}
+
+*/
+
+/* cloud move */
+
+@-webkit-keyframes cloud-move {
+    from {
+        -webkit-transform: translate(0, 50px);
+        transform: translate(0, 50px);
+    }
+
+    to {
+        -webkit-transform: translate(200px, 50px);
+        transform: translate(200px, 50px);
+    }
+}
+
+@keyframes cloud-move {
+    from {
+        -webkit-transform: translate(0, 50px);
+        transform: translate(0, 50px);
+    }
+
+    to {
+        -webkit-transform: translate(200px, 50px);
+        transform: translate(200px, 50px);
+    }
+}
+
+@-webkit-keyframes cloud-move-reverse {
+    from {
+        -webkit-transform: translate(446px, 48px);
+        transform: translate(446px, 48px);
+    }
+
+    to {
+        -webkit-transform: translate(100px, 48px);
+        transform: translate(100px, 48px);
+    }
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        -webkit-transform: translate(446px, 48px);
+        transform: translate(446px, 48px);
+    }
+
+    to {
+        -webkit-transform: translate(100px, 48px);
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-front {
+    -webkit-animation: 20s cloud-move infinite alternate linear;
+    animation: 20s cloud-move infinite alternate linear;
+
+}
+
+.cloud-back {
+    -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
+    animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/** media queries for screen sizes **/
+
+
+@media all and (min-width: 500px) and (max-width: 800px) {
+    .grid {
+        -ms-grid-columns: 1fr 10px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        -ms-grid-columns: 1fr 10px 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header img {
+        max-width: 50%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}

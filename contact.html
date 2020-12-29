@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Kumi</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png" />
+
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <header>
+        <!-- Add Logo here -->
+        <img src="img/gernhardt_logo.png" alt="logo">
+        <nav>
+            <ul role="menubar">
+                <li role="presentation">
+                    <a href="index.html" role="menuitem" class="button">Home</a>
+                </li>
+                <li role="presentation">
+                    <a href="about.html" role="menuitem" class="button">About</a>
+                </li>
+                <li role="presentation">
+                    <a href="work.html" role="menuitem" class="button">Work</a>
+                </li>
+                <li role="presentation">
+                    <a href="contact.html" role="menuitem" class="button">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="profile">
+        <h1>
+            Contact Me
+        </h1>
+        <p>
+            I'm very excited to hear from you! You can find me at:
+        </p>
+        <div class="personalcontact">
+            Kumi Gernhardt <br>
+            07 Yellow brick Road <br>
+            1900, Emerald City <br>
+            Oz<br>
+            Tel <a href="tel:+49 123 4567 8910">+49 123 4567 8919</a><br>
+            <a href="mailto:kumigernhardt@gmail.com">kumigernhardt@gmail.com</a>
+        </div>
+        <p>
+            <a href="mailto:kumigernhardt@gmail.com">Contact Me</a>
+        </p>
+        <br>
+        <p>
+            Please feel free to fill in this contact form
+        </p>
+
+        <form action="" method="post" id="contact-form">
+            <label class="standard-label" for="contact-email">E-mail: </label>
+            <input type="email" id="contact-email" required>
+            <br>
+            <label class="standard-label" for="contact-number">Phone: </label>
+            <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="123-456-7890" id="contact-number">
+            <br>
+            <label class="standard-label" for="message-text">Message: </label>
+            <textarea maxlength="240" id="message-text" required></textarea>
+
+            <input type="submit" value="Send message">
+        </form>
+
+    </main>
+    <!------------FOOTER------------>
+    <footer class="page-footer">
+        <p>
+            Stay in touch!
+        </p>
+        <a class="footer-link" href="mailto:email@example.com" target="_blank">
+            <img src="img/mail.svg" alt="mail" style="width:42px;height:42px;">
+        </a>
+        <a class="footer-link" href="https://www.linkedin.com/" target="_blank">
+            <img src="img/linkedin_icon.svg" alt="linkedin" style="width:42px;height:42px;">
+        </a>
+        <a class="footer-link" href="https://twitter.com/" target="_blank">
+            <img src="img/twitter_icon.svg" alt="twitter" style="width:42px;height:42px;">
+        </a>
+        <a class="footer-link" href="https://github.com/" target="_blank">
+            <img src="img/github_icon.svg" alt="github" style="width:42px;height:42px;">
+        </a>
+    </footer>
+</body>
+
+</html>

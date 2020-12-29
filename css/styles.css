@@ -1,0 +1,305 @@
+/*
+Colors used
+
+Text Color (white): white;
+Primary Color (purple): #590059;
+Secondary Color (white): white;
+***/
+
+:root {
+    --primary-color: #590059;
+    --background-color: #f4efeb;
+    --secondary-color: white;
+    --font-weight: 400px;
+    --font-size: 16px;
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Montserrat, sans-serif;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: 2;
+    padding: 7%;
+}
+
+/*Header*/
+
+header {
+    margin: auto;
+    display: flex;
+    padding-bottom: 3%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    float: left;
+}
+
+.logo {
+    padding: 50px 20px;
+    max-width: 100%;
+    
+}
+
+li {
+    display: inline-block;
+    padding: 40px;
+    width: 100px;
+    flex: end;
+}
+
+
+/* middle section */
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-variant: small-caps;
+    height: 32;
+    padding:none;
+    margin: none;
+
+}
+
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.profile__portrait {
+    float: left;
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.profile-intro {
+    padding: 30px;
+}
+
+.download {
+    margin-top: 30px;
+}
+
+span {
+    color: var(--primary-color);
+    animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* table - work */
+
+thead {
+    text-align: left;
+}
+
+
+.button {
+    /* overwrites browser defaults */
+    /* resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* style button */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: 0.2s opacity;
+}
+
+.button:visited {
+    color: var(--secondary-color);
+}
+
+.button:hover,
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d()*/
+    transform: translate3d(0, 10px, 0);
+    /*https://www.w3schools.com/css/css3_transitions.asp*/
+    transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+    opacity: 70%;
+}
+
+
+/*contact form */
+
+input[type=text],
+select,
+textarea {
+    width: 85%;
+    height: 10px;
+    padding: 40px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* footer */
+
+.page-footer {
+    clear: both;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-link {
+    margin: 70px;
+}
+
+/* GRID IN WORK.HTML */
+.grid {
+    display: grid;
+}
+
+/* Grid fallback */
+.grid__item {
+    display: inline-block;
+    padding: 10px;
+}
+
+/* Grid for newer browsers */
+@supports (display: grid) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+        margin: 0;
+    }
+
+    .grid__item {
+        background-color: #f9f9f9;
+        border-radius: 3%;
+        width: auto;
+        min-height: auto;
+        margin: 0;
+    }
+}
+
+/* animations */
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: var(--primary-color);
+    }
+}
+
+.sun {
+    animation-duration: 4s;
+    animation-name: color-change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+
+/*OR ANOTHER WAY TO APPLY ANIMATION IS 
+
+.sun {
+    animation: 4s color-change infinite alternate linear;
+}
+
+*/
+
+/* cloud move */
+
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 48px);
+    }
+
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-front {
+    animation: 20s cloud-move infinite alternate linear;
+
+}
+
+.cloud-back {
+    animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/** media queries for screen sizes **/
+
+
+@media all and (min-width: 500px) and (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header img {
+        max-width: 50%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
