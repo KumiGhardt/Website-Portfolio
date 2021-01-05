@@ -1,11 +1,4 @@
 /*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
-/*
 Colors used
 
 Text Color (white): white;
@@ -13,16 +6,24 @@ Primary Color (purple): #590059;
 Secondary Color (white): white;
 ***/
 
+:root {
+    --primary-color: #590059;
+    --background-color: #f4efeb;
+    --secondary-color: white;
+    --font-weight: 400px;
+    --font-size: 16px;
+    
+}
+
 * {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #f4efeb;
+    background-color: var(--background-color);
     font-family: Montserrat, sans-serif;
-    font-size: 16px;
-    font-weight: 400px;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
     line-height: 2;
     padding: 7%;
 }
@@ -31,19 +32,11 @@ body {
 
 header {
     margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding-bottom: 3%;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     float: left;
 }
@@ -51,7 +44,7 @@ header {
 .logo {
     padding: 50px 20px;
     max-width: 100%;
-
+    
 }
 
 li {
@@ -67,9 +60,8 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     font-variant: small-caps;
-    height: 32;
-    padding: none;
-    margin: none;
+    padding:0;
+    margin: 0;
 
 }
 
@@ -95,23 +87,8 @@ h1 {
 }
 
 span {
-    color: #590059;
-    -webkit-animation: blink 1.5s linear infinite;
+    color: var(--primary-color);
     animation: blink 1.5s linear infinite;
-}
-
-@-webkit-keyframes blink {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: .5;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 @keyframes blink {
@@ -144,20 +121,18 @@ thead {
     /* takes the font from the outer container */
     font-family: inherit;
     /* style button */
-    background-color: #590059;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
     /* width of the border, type, color */
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    -webkit-transition: 0.2s opacity;
-    -o-transition: 0.2s opacity;
     transition: 0.2s opacity;
 }
 
 .button:visited {
-    color: white;
+    color: var(--secondary-color);
 }
 
 .button:hover,
@@ -167,11 +142,8 @@ thead {
     /* reduces the opacity of the button to 80% */
 
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d()*/
-    -webkit-transform: translate3d(0, 10px, 0);
     transform: translate3d(0, 10px, 0);
     /*https://www.w3schools.com/css/css3_transitions.asp*/
-    -webkit-transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
-    -o-transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     opacity: 70%;
 }
@@ -189,8 +161,8 @@ textarea {
 }
 
 input[type=submit] {
-    background-color: #590059;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -211,7 +183,6 @@ input[type=submit] {
 
 /* GRID IN WORK.HTML */
 .grid {
-    display: -ms-grid;
     display: grid;
 }
 
@@ -224,9 +195,7 @@ input[type=submit] {
 /* Grid for newer browsers */
 @supports (display: grid) {
     .grid {
-        display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 1fr 50px 1fr 50px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 50px;
         margin: 0;
@@ -242,20 +211,6 @@ input[type=submit] {
 }
 
 /* animations */
-@-webkit-keyframes color-change {
-    0% {
-        fill: #edc655;
-    }
-
-    50% {
-        fill: #fcffad;
-    }
-
-    100% {
-        fill: #590059;
-    }
-}
-
 @keyframes color-change {
     0% {
         fill: #edc655;
@@ -266,20 +221,15 @@ input[type=submit] {
     }
 
     100% {
-        fill: #590059;
+        fill: var(--primary-color);
     }
 }
 
 .sun {
-    -webkit-animation-duration: 4s;
     animation-duration: 4s;
-    -webkit-animation-name: color-change;
     animation-name: color-change;
-    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
     animation-direction: alternate;
-    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
 }
 
@@ -295,62 +245,32 @@ input[type=submit] {
 
 /* cloud move */
 
-@-webkit-keyframes cloud-move {
-    from {
-        -webkit-transform: translate(0, 50px);
-        transform: translate(0, 50px);
-    }
-
-    to {
-        -webkit-transform: translate(200px, 50px);
-        transform: translate(200px, 50px);
-    }
-}
-
 @keyframes cloud-move {
     from {
-        -webkit-transform: translate(0, 50px);
         transform: translate(0, 50px);
     }
 
     to {
-        -webkit-transform: translate(200px, 50px);
         transform: translate(200px, 50px);
-    }
-}
-
-@-webkit-keyframes cloud-move-reverse {
-    from {
-        -webkit-transform: translate(446px, 48px);
-        transform: translate(446px, 48px);
-    }
-
-    to {
-        -webkit-transform: translate(100px, 48px);
-        transform: translate(100px, 48px);
     }
 }
 
 @keyframes cloud-move-reverse {
     from {
-        -webkit-transform: translate(446px, 48px);
         transform: translate(446px, 48px);
     }
 
     to {
-        -webkit-transform: translate(100px, 48px);
         transform: translate(100px, 48px);
     }
 }
 
 .cloud-front {
-    -webkit-animation: 20s cloud-move infinite alternate linear;
     animation: 20s cloud-move infinite alternate linear;
 
 }
 
 .cloud-back {
-    -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
     animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
@@ -359,7 +279,6 @@ input[type=submit] {
 
 @media all and (min-width: 500px) and (max-width: 800px) {
     .grid {
-        -ms-grid-columns: 1fr 10px 1fr;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
     }
@@ -371,7 +290,6 @@ input[type=submit] {
 
 @media all and (max-width: 500px) {
     .grid {
-        -ms-grid-columns: 1fr 10px 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
