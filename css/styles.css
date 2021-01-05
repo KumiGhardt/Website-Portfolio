@@ -60,9 +60,8 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     font-variant: small-caps;
-    height: 32;
-    padding:none;
-    margin: none;
+    padding:0;
+    margin: 0;
 
 }
 
